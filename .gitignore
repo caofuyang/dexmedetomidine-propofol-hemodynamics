@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+
+# 编辑器/系统
+.idea/
+.vscode/
+.DS_Store
+
+# 日志与临时文件
+*.log
+
+# ============================================================
+# 重要：禁止上传任何患者级原始数据或派生数据
+# eICU-CRD 与 MIMIC-IV 数据使用协议（DUA）禁止再分发数据。
+# 本仓库只放代码、变量字典与文档，不放数据。
+# ============================================================
+data/
+*.csv
+*.csv.gz
+*.parquet
+*.feather
+*.h5
+*.hdf5
+*.pickle
+*.pkl
+*.pkl.gz
+*.sas7bdat
