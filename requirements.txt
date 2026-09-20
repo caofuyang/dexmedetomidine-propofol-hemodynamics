@@ -1,10 +1,2 @@
-# 分析所用 Python 环境（见稿件 1.5 节）
-# Python 3.12.14
-pandas==2.2.3
 numpy==2.3.5
-
-# 若你的脚本还 import 了下面这些库，请按实际版本补上并取消注释：
-# statsmodels   # 二元 logistic 回归（倾向评分，岭项）
-# scipy
-# matplotlib    # Fig.1 / Fig.2
-# seaborn
+pandas==2.2.3

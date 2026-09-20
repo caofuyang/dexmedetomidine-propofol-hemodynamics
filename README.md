@@ -1,63 +1,38 @@
-# dexmedetomidine-propofol-hemodynamics
+# 分析代码 Version 1.0
 
-Analysis code for the manuscript:
+本目录对应稿件中表1至表4、主要效应、跨数据库差异和敏感性分析的最终计算流程。代码已去除作者电脑上的个人绝对路径；统计定义、估计方法、bootstrap次数和随机种子均保持不变。
 
-> **Hemodynamic abnormalities within 24 hours of initial dexmedetomidine versus propofol sedation after vital-sign sampling harmonization: an active-comparator study in eICU-CRD and MIMIC-IV**
-
-## Overview
-
-This repository contains the de-identified analysis code used to build active-comparator cohorts of adults receiving a first continuous infusion of dexmedetomidine or propofol within 24 hours of their first ICU admission, harmonize vital-sign measurements onto a fixed hourly time grid, and estimate overlap-weighted associations between initial sedation strategy and repeated hemodynamic abnormalities within 24 hours.
-
-The analysis was performed separately in two public critical-care databases:
-
-- **eICU-CRD v2.0** (multi-center, USA)
-- **MIMIC-IV v3.1** (Beth Israel Deaconess Medical Center, single center)
-
-## Data availability
-
-This repository intentionally contains **no patient-level data**. eICU-CRD and MIMIC-IV are available to credentialed researchers after completing required training and signing the respective data-use agreements (DUAs). The DUAs prohibit redistribution of the underlying data. Only analysis code, the variable dictionary, and documentation are provided here.
-
-## Study design (brief)
-
-- **Eligibility:** adults (age ≥ 18) with a first continuous infusion of dexmedetomidine or propofol within 24 h of first ICU admission.
-- **Harmonization:** measurements during the 6-h baseline and 24-h follow-up were mapped to fixed 1-h bins relative to treatment initiation and averaged within each bin. Invasive measurements were prioritized separately for mean and systolic arterial pressure, with the corresponding noninvasive component used when unavailable.
-- **Primary outcome:** the same abnormality — hypotension (MAP < 65 mmHg or SBP < 90 mmHg) or bradycardia (HR < 50 beats/min) — in two adjacent post-index hourly bins.
-- **Estimation:** complete-case propensity-score overlap weighting fitted separately in each database; 1,000 bootstrap replicates for risk differences (RDs), risk ratios (RRs), and the between-database RD difference.
-
-## Environment
+## 软件环境
 
 - Python 3.12.14
 - pandas 2.2.3
 - NumPy 2.3.5
 
-See `requirements.txt`.
+## 原始数据
 
-## Repository structure
+代码需要依法取得的 eICU-CRD v2.0 与 MIMIC-IV v3.1。由于数据库使用协议限制，本资料包不包含患者级原始数据、派生患者级队列或任何可识别信息。
 
+将环境变量 `SEDATION_DB_ROOT` 指向同时包含 `eICU-CRD` 与 `MIMIC-IV` 文件夹的目录。预期数据库子目录结构与脚本顶部的 `EICU`、`MIMIC` 路径一致。
+
+## 运行
+
+```bash
+python3.12 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+export SEDATION_DB_ROOT="/your/path/to/deidentified_databases"
+python run_pipeline.py
 ```
-.
-├── README.md
-├── LICENSE
-├── CITATION.cff
-├── requirements.txt
-├── VARIABLE_DICTIONARY.md
-└── *.py          # analysis scripts (see below)
-```
 
-### Analysis scripts
+`run_pipeline.py`按以下顺序执行：基础队列构建、MIMIC时间零点体重刷新、小时窗协调分析、诊断表、附加敏感性分析、事件级及时间零点血管活性药复核。完整重算会读取大型压缩数据库文件，运行时间和内存占用取决于硬件。
 
-> **TODO (to be finalized):** replace this section with the actual list of `.py` scripts and a one-line description of each, once the script filenames are confirmed.
+## 结果对应关系
 
-The pipeline follows the manuscript's three stages: (1) cohort construction and data extraction, (2) vital-sign harmonization and outcome definition, and (3) propensity-score overlap weighting and bootstrap inference.
+- 表1：`table11_harmonized_flow.csv`
+- 表2：`table17_harmonized_baseline.csv`
+- 表3：`table7_harmonized_hourly_effects.csv`
+- 表4：`table10_harmonized_hourly_sensitivity.csv`与`table21_additional_harmonized_sensitivity.csv`
+- 跨数据库RD差：`table8_harmonized_hourly_heterogeneity.csv`
+- 未协调事件级对照：`table19_unharmonized_event_level_same_cohort.csv`与`table20_unharmonized_event_level_heterogeneity.csv`
 
-## Variable dictionary
-
-`VARIABLE_DICTIONARY.md` defines every exposure, outcome, covariate, and analysis rule (cleaning ranges, time-window mapping, blood-pressure source priority, baseline-stability requirements).
-
-## License
-
-This code is released under the [MIT License](LICENSE).
-
-## Citation
-
-Please cite this work using the metadata in [`CITATION.cff`](CITATION.cff), or cite the associated manuscript.
+`reference_outputs`仅包含不含患者级信息的最终汇总结果，用于重算后核对。`MANIFEST_SHA256.txt`记录本版本全部代码、依赖文件及参考输出的校验值。
