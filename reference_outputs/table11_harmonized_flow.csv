@@ -1,0 +1,9 @@
+﻿database,stage,total,propofol,dexmedetomidine
+eICU-CRD,initial_strategy,13489,10874,2615
+eICU-CRD,harmonized_stable_baseline,6754,5571,1183
+eICU-CRD,harmonized_stable_and_outcome_evaluable,6737,5555,1182
+eICU-CRD,complete_case_weighted_analysis,5641,4472,1169
+MIMIC-IV,initial_strategy,20032,19430,602
+MIMIC-IV,harmonized_stable_baseline,7876,7542,334
+MIMIC-IV,harmonized_stable_and_outcome_evaluable,7843,7510,333
+MIMIC-IV,complete_case_weighted_analysis,7748,7416,332

@@ -1,0 +1,5 @@
+﻿outcome,eICU_RD_percent,MIMIC_RD_percent,RD_difference_eICU_minus_MIMIC_percent,difference_CI95_low,difference_CI95_high,heterogeneity_p,method
+hourly_repeated_instability_24h,3.576114634485977,2.500641855175428,1.075472779310549,-6.021673590152885,8.716144398332652,0.778246170513806,difference between independent database-specific overlap-weighted risk differences
+hourly_repeated_hypotension_24h,2.8795618786869204,1.4573999582752295,1.4221619204116909,-5.84962007658068,8.777169294684375,0.69775889438934,difference between independent database-specific overlap-weighted risk differences
+hourly_repeated_bradycardia_24h,0.41765251961139516,1.361232343182016,-0.9435798235706208,-3.8897314177129743,2.0974479186830193,0.5392577120562945,difference between independent database-specific overlap-weighted risk differences
+hourly_any_instability_24h,7.366026803950499,-0.6447011560290594,8.010727959979558,0.855974923648991,15.461900534860563,0.031038826604974423,difference between independent database-specific overlap-weighted risk differences

@@ -1,0 +1,5 @@
+﻿database,treatment,n,bp_hour_bins_median,bp_hour_bins_q1,bp_hour_bins_q3,hr_hour_bins_median,hr_hour_bins_q1,hr_hour_bins_q3,bp_both_source_hour_bins_median,bp_source_discordant_hour_bins_median,fraction_with_any_both_source_hour,fraction_with_any_source_discordance,discordant_fraction_among_both_source_hours,remaining_icu_time_under_24h_fraction
+eICU-CRD,propofol,4472,24.0,23.0,24.0,24.0,24.0,24.0,0.0,0.0,0.3736583184257603,0.20304114490161002,0.15896030412872425,0.12343470483005367
+eICU-CRD,dexmedetomidine,1169,24.0,21.0,24.0,24.0,24.0,24.0,0.0,0.0,0.40290846877673225,0.24893071000855432,0.2027876933537311,0.1941830624465355
+MIMIC-IV,propofol,7416,24.0,22.0,24.0,24.0,23.0,24.0,0.0,0.0,0.41383495145631066,0.19093851132686085,0.2209085252022402,0.12338187702265373
+MIMIC-IV,dexmedetomidine,332,23.0,22.0,24.0,24.0,23.0,24.0,0.0,0.0,0.16566265060240964,0.07530120481927711,0.23983739837398374,0.09036144578313253
