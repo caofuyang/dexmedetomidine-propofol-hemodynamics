@@ -1,0 +1,2 @@
+﻿outcome,eICU_RD_percent,MIMIC_RD_percent,RD_difference_percent,CI95_low,CI95_high,heterogeneity_p,bootstrap_replicates
+hemodynamic_instability_24h,6.447731070934115,0.8142235336100978,5.633507537324017,-2.3960419476497585,12.364364084751847,0.14492444754531117,1000

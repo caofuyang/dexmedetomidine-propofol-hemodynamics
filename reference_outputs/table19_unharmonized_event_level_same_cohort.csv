@@ -1,0 +1,3 @@
+﻿database,analysis,outcome,analysis_n,propofol_n,dexmedetomidine_n,propofol_weighted_percent,dexmedetomidine_weighted_percent,risk_difference_percent,RD_CI95_low,RD_CI95_high,risk_ratio,RR_CI95_low,RR_CI95_high
+eICU-CRD,unharmonized_event_level_on_harmonized_cohort,hemodynamic_instability_24h,5641,4472,1169,59.65350712931876,66.10123820025288,6.447731070934115,1.170946221108598,10.675708119237658,1.10808637046195,1.0198024099623333,1.1863976015265063
+MIMIC-IV,unharmonized_event_level_on_harmonized_cohort,hemodynamic_instability_24h,7748,7416,332,46.22652370425086,47.040747237860955,0.8142235336100978,-5.272861660482265,6.522836063274308,1.0176137738329483,0.887192457274778,1.1476287107224463
