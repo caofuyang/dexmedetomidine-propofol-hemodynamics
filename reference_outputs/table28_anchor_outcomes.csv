@@ -1,0 +1,17 @@
+﻿database,outcome_group,outcome,column,analysis_n,propofol_weighted_percent,dexmedetomidine_weighted_percent,risk_difference_percent,RD_CI95_low,RD_CI95_high,risk_ratio,bootstrap_replicates
+eICU-CRD,Thresholded surrogate,k = 1 adjacent abnormal hour,v2_ip_composite_k1,5639,52.91,60.31,7.394,2.499,12.202,1.14,600
+eICU-CRD,Thresholded surrogate,k = 2 adjacent abnormal hours (pre-specified),hourly_repeated_instability_24h,5639,35.48,39.13,3.647,-0.996,8.491,1.103,600
+eICU-CRD,Thresholded surrogate,k = 3 consecutive abnormal hours,v2_ip_composite_k3,5639,23.93,26.68,2.755,-1.158,7.307,1.115,600
+eICU-CRD,Thresholded surrogate,Hypotension by MAP <65 mmHg only,v2_ip_map_k2,5639,28.87,30.75,1.89,-2.34,6.03,1.065,600
+eICU-CRD,Thresholded surrogate,Hypotension by SBP <90 mmHg only,v2_ip_sbp_k2,5639,15.67,18.12,2.45,-0.773,6.161,1.156,600
+eICU-CRD,Patient-important anchor,New vasopressor after the index time,new_vasopressor_24h,5639,16.01,19.97,3.963,0.031,7.5,1.248,600
+eICU-CRD,Patient-important anchor,ICU mortality,icu_mortality,5639,8.62,4.61,-4.019,-6.203,-1.719,0.534,600
+eICU-CRD,Patient-important anchor,Hospital mortality,hospital_mortality,5639,13.05,8.06,-4.994,-7.449,-2.105,0.617,600
+MIMIC-IV,Thresholded surrogate,k = 1 adjacent abnormal hour,v2_ip_composite_k1,7748,66.47,65.82,-0.645,-6.575,5.21,0.99,600
+MIMIC-IV,Thresholded surrogate,k = 2 adjacent abnormal hours (pre-specified),hourly_repeated_instability_24h,7748,39.8,42.3,2.501,-3.51,8.425,1.063,600
+MIMIC-IV,Thresholded surrogate,k = 3 consecutive abnormal hours,v2_ip_composite_k3,7748,22.86,21.26,-1.597,-6.561,3.27,0.93,600
+MIMIC-IV,Thresholded surrogate,Hypotension by MAP <65 mmHg only,v2_ip_map_k2,7748,31.3,31.43,0.138,-5.765,5.914,1.004,600
+MIMIC-IV,Thresholded surrogate,Hypotension by SBP <90 mmHg only,v2_ip_sbp_k2,7748,16.03,19.15,3.119,-1.555,8.429,1.195,600
+MIMIC-IV,Patient-important anchor,New vasopressor after the index time,new_vasopressor_24h,7748,39.27,25.35,-13.916,-19.417,-8.243,0.646,600
+MIMIC-IV,Patient-important anchor,ICU mortality,icu_mortality,7748,13.25,6.1,-7.157,-10.341,-4.017,0.46,600
+MIMIC-IV,Patient-important anchor,Hospital mortality,hospital_mortality,7748,17.04,9.82,-7.221,-11.232,-3.724,0.576,600

@@ -1,0 +1,5 @@
+﻿database,outcome,method,analysis_n,imputations,risk_difference_percent,RD_CI95_low,RD_CI95_high,risk_ratio,RR_CI95_low,RR_CI95_high,RD_CI_basis
+eICU-CRD,hourly_repeated_instability_24h,complete_case_bootstrap,5639,0,3.646542959104865,-1.062659741049054,8.263062823162146,1.1027679402347408,0.9719151352488096,1.247069187069733,cluster/patient bootstrap (v1.0)
+eICU-CRD,hourly_repeated_instability_24h,multiple_imputation,5680,20,4.088348876871634,-0.09773814782056203,8.274435901563828,1.115696887250672,0.9991398017465968,1.2458512232670935,Rubin's rules (sandwich within-imputation variance)
+MIMIC-IV,hourly_repeated_instability_24h,complete_case_bootstrap,7748,0,2.500641855175428,-3.4446041103565133,8.767357642437657,1.0628268006045425,0.9147312272846356,1.2263798336530156,cluster/patient bootstrap (v1.0)
+MIMIC-IV,hourly_repeated_instability_24h,multiple_imputation,7843,20,2.7408065111098887,-3.4858441148767176,8.967457137096496,1.0689023903946953,0.9212442082390513,1.2402274119860903,Rubin's rules (sandwich within-imputation variance)
