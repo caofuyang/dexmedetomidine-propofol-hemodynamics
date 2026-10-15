@@ -1,5 +1,12 @@
 #!/usr/bin/env python3
-"""Run the frozen Version 1.0 analysis pipeline in its documented order."""
+"""Run the v2.0 analysis pipeline in its documented order.
+
+Steps 1-6 reproduce the frozen v1.0 pipeline (and, because it skips a raw scan
+when its cache exists, are cheap to re-run).  Step 7 performs the single new raw
+scan and writes the per-hour-bin table; step 8 derives every alternative outcome
+definition from that table without touching the raw databases again; steps 9-10
+add the doubly robust (AIPW) re-analysis and the multiple-imputation sensitivity.
+"""
 from __future__ import annotations
 
 import os
@@ -15,6 +22,12 @@ STEPS = [
     "create_harmonized_diagnostics.py",
     "additional_harmonized_sensitivity.py",
     "recompute_secondary_harmonized.py",
+    "harmonized_bin_export.py",
+    "harmonized_definition_variants.py",
+    "double_robust_aipw.py",
+    "multiple_imputation_sensitivity.py",
+    "cross_database_grid.py",
+    "patient_important_anchors.py",
 ]
 
 

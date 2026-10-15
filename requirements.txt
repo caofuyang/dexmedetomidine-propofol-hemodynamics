@@ -1,2 +1,4 @@
 numpy==2.3.5
 pandas==2.2.3
+XlsxWriter>=3.2,<4
+matplotlib>=3.8,<4

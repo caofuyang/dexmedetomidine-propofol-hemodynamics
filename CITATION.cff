@@ -1,11 +1,27 @@
 cff-version: 1.2.0
-message: "If you use this code, please cite it as below."
-title: "Hemodynamic abnormalities within 24 hours of initial dexmedetomidine versus propofol sedation after vital-sign sampling harmonization: an active-comparator study in eICU-CRD and MIMIC-IV"
+message: "If you use this code or these results, please cite the article and this repository."
+title: "Analysis code and aggregate results: outcome-definition dependence of the dexmedetomidine versus propofol haemodynamic comparison (eICU-CRD and MIMIC-IV)"
+version: 2.0.0
+date-released: "2026-10-15"
+license: MIT
+type: software
 authors:
   - family-names: Cao
     given-names: Fuyang
-    orcid: "https://orcid.org/0000-0002-3746-8489"
-version: 1.0.0
-date-released: 2026-09-19
-license: MIT
+  - family-names: Li
+    given-names: Juan
+  - family-names: Li
+    given-names: Jiannan
+  - family-names: Liu
+    given-names: Xiaomei
+  - family-names: Yang
+    given-names: Lu
 repository-code: "https://github.com/caofuyang/dexmedetomidine-propofol-hemodynamics"
+keywords:
+  - critical care
+  - dexmedetomidine
+  - propofol
+  - outcome definition
+  - reproducibility
+  - MIMIC-IV
+  - eICU-CRD
