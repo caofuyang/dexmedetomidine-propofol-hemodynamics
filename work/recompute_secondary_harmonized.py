@@ -95,14 +95,23 @@ def main():
         index=False, encoding="utf-8-sig",
     )
 
+    # The time-zero-vasopressor sensitivity needs a legacy per-patient snapshot
+    # ("*.pre_opioid_vaso_fix.csv") that predates the packaged code and was never
+    # shipped with it, so a clean checkout cannot regenerate table12.  Skip this
+    # single analysis with a warning instead of aborting the pipeline; the frozen
+    # value is carried over from reference_outputs unchanged.
     timezero_rows = []
+    legacy_missing = []
     for database, prefix in (("eICU-CRD", "eicu"), ("MIMIC-IV", "mimic")):
+        legacy_path = OUT / f"{prefix}_active_comparator_patient_level_v2.pre_opioid_vaso_fix.csv"
+        if not legacy_path.exists():
+            legacy_missing.append(database)
+            continue
         current = base.enforce_current_definitions(pd.read_csv(
             OUT / f"{prefix}_active_comparator_patient_level_v2.csv"
         ))
         old = pd.read_csv(
-            OUT / f"{prefix}_active_comparator_patient_level_v2.pre_opioid_vaso_fix.csv",
-            usecols=["id", "baseline_vasopressor"],
+            legacy_path, usecols=["id", "baseline_vasopressor"],
         ).rename(columns={"baseline_vasopressor": "pre_fix_baseline_vasopressor"})
         hourly_outcome = pd.read_csv(OUT / f"{prefix}_harmonized_hourly_outcomes_v3.csv")
         frame = current.merge(old, on="id", how="left", validate="one_to_one")
@@ -123,10 +132,19 @@ def main():
         )
         timezero_rows.extend(rows)
 
-    pd.DataFrame(timezero_rows).to_csv(
-        OUT / "table12_timezero_vasopressor_sensitivity.csv",
-        index=False, encoding="utf-8-sig",
-    )
+    if legacy_missing:
+        print(
+            "[WARN] legacy pre-fix cohort missing for "
+            f"{', '.join(legacy_missing)}; table12 (time-zero vasopressor) was NOT "
+            "regenerated. Carry over reference_outputs/"
+            "table12_timezero_vasopressor_sensitivity.csv unchanged.",
+            flush=True,
+        )
+    if timezero_rows:
+        pd.DataFrame(timezero_rows).to_csv(
+            OUT / "table12_timezero_vasopressor_sensitivity.csv",
+            index=False, encoding="utf-8-sig",
+        )
     print(pd.DataFrame(event_rows).to_string(index=False))
     print(pd.DataFrame([difference_row(event_effects, event_draws)]).to_string(index=False))
     print(pd.DataFrame(timezero_rows).query(
