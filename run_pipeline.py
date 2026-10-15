@@ -28,6 +28,7 @@ STEPS = [
     "multiple_imputation_sensitivity.py",
     "cross_database_grid.py",
     "patient_important_anchors.py",
+    "effective_sample_size.py",
 ]
 
 
