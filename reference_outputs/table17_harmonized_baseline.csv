@@ -1,11 +1,11 @@
 ﻿database,variable,type,propofol,dexmedetomidine
 eICU-CRD,age,continuous,"60.0 [46.0, 72.0]","60.0 [50.0, 72.0]"
-eICU-CRD,weight,continuous,"81.6 [68.0, 99.5]","81.6 [68.5, 95.4]"
+eICU-CRD,weight,continuous,"81.6 [68.0, 99.5]","81.7 [68.5, 95.4]"
 eICU-CRD,baseline_map,continuous,"88.2 [79.4, 99.8]","87.4 [78.1, 98.8]"
-eICU-CRD,baseline_hr,continuous,"88.8 [75.5, 103.7]","87.6 [77.3, 103.4]"
+eICU-CRD,baseline_hr,continuous,"88.8 [75.5, 103.7]","87.7 [77.3, 103.4]"
 eICU-CRD,index_hour,continuous,"1.4 [0.6, 4.5]","2.5 [1.0, 8.1]"
-eICU-CRD,female,categorical,1970 (44.1%),391 (33.4%)
-eICU-CRD,vent,categorical,3701 (82.8%),594 (50.8%)
+eICU-CRD,female,categorical,1969 (44.0%),390 (33.4%)
+eICU-CRD,vent,categorical,3700 (82.8%),595 (50.9%)
 eICU-CRD,baseline_midazolam,categorical,91 (2.0%),17 (1.5%)
 eICU-CRD,baseline_opioid,categorical,274 (6.1%),35 (3.0%)
 eICU-CRD,baseline_ketamine,categorical,1 (0.0%),0 (0.0%)
